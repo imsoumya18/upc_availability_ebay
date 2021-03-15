@@ -1,7 +1,11 @@
 import openpyxl
+from openpyxl.styles import Alignment
 
 wb = openpyxl.load_workbook('dvd.xlsx')
+wb2 = openpyxl.Workbook()
+
 ws = wb.worksheets[0]
+ws2 = wb2.create_sheet(title='Sheet1', index=0)
 
 upc_list = []
 upc_set = ()
@@ -15,20 +19,17 @@ for i in range(1, 13):
 
 upc_set = set(upc_list)
 
-print(len(upc_list))
-print(len(upc_set))
-print(upc_list)
-print(upc_set)
-
-ws.cell(1, 1).value = 'UPC'
+ws2.cell(1, 1).value = 'UPC'
+ws2.cell(1, 2).value = 'Count'
 j = 2
 for i in upc_set:
-    ws.cell(j, 13).value = str(i)
+    ws2.cell(j, 1).value = i
+    ws2.cell(j, 1).number_format = '0'
+    if upc_list.count(i) != 1:
+        ws2.cell(j, 2).value = 'x' + str(upc_list.count(i))
+        ws2.cell(j, 2).alignment = Alignment(horizontal='right')
     j += 1
 
-# rows = ws.max_row
-# for i in range(1, 13):
-#     ws.delete_cols(idx=i)
-# ws.move_range(cell_range='M1:M' + str(rows), cols=-12)
+ws2.column_dimensions['A'].width = 18.22
 
-wb.save('dvd2.xlsx')
+wb2.save('output.xlsx')
