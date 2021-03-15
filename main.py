@@ -17,5 +17,18 @@ upc_set = set(upc_list)
 
 print(len(upc_list))
 print(len(upc_set))
+print(upc_list)
+print(upc_set)
+
+ws.cell(1, 1).value = 'UPC'
+j = 2
+for i in upc_set:
+    ws.cell(j, 13).value = str(i)
+    j += 1
+
+# rows = ws.max_row
+# for i in range(1, 13):
+#     ws.delete_cols(idx=i)
+# ws.move_range(cell_range='M1:M' + str(rows), cols=-12)
 
 wb.save('dvd2.xlsx')
