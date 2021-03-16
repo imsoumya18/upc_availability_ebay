@@ -1,21 +1,25 @@
+import os
 import openpyxl
 from openpyxl.styles import Alignment
-
-wb = openpyxl.load_workbook('dvd.xlsx')
-wb2 = openpyxl.Workbook()
-
-ws = wb.worksheets[0]
-ws2 = wb2.create_sheet(title='Sheet1', index=0)
 
 upc_list = []
 upc_set = ()
 
-for i in range(1, 13):
-    if ws.cell(2, i).value == 'UPC':
-        j = 3
-        while ws.cell(j, i).value is not None:
-            upc_list.append(ws.cell(j, i).value)
-            j += 1
+print(os.listdir('sheets'))
+
+for file in os.listdir('sheets'):
+    wb = openpyxl.load_workbook(file)
+    wb2 = openpyxl.Workbook()
+
+    ws = wb.worksheets[0]
+    ws2 = wb2.create_sheet(title='Sheet1', index=0)
+
+    for i in range(1, 13):
+        if ws.cell(2, i).value == 'UPC':
+            j = 3
+            while ws.cell(j, i).value is not None:
+                upc_list.append(ws.cell(j, i).value)
+                j += 1
 
 upc_set = set(upc_list)
 
