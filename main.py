@@ -1,14 +1,12 @@
-import os
 import openpyxl
 from openpyxl.styles import Alignment
+import os
 
 upc_list = []
 upc_set = ()
 
-print(os.listdir('sheets'))
-
-for file in os.listdir('sheets'):
-    wb = openpyxl.load_workbook(file)
+for file in os.listdir('F:\\Github\\upc_availability_ebay\\sheets'):
+    wb = openpyxl.load_workbook('F:\\Github\\upc_availability_ebay\\sheets\\' + file)
     wb2 = openpyxl.Workbook()
 
     ws = wb.worksheets[0]
