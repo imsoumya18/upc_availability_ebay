@@ -34,4 +34,4 @@ for i in upc_set:
 
 ws2.column_dimensions['A'].width = 18.22
 
-wb2.save('output.xlsx')
+wb2.save('F:\\Github\\upc_availability_ebay\\output.xlsx')

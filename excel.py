@@ -1,37 +1,60 @@
-import openpyxl
-from openpyxl.styles import Alignment
-import os
+# Q 3a
+# x = []
+# n = int(input('Enter no of numbers: '))
+#
+# for i in range(n):
+#     no = int(input('Enter number' + str(i+1) + ': '))
+#     if no%2 == 0:
+#         x.append(no)
+#
+# print(x)
 
-upc_list = []
-upc_set = ()
 
-for file in os.listdir('F:\\Github\\upc_availability_ebay\\sheets'):
-    wb = openpyxl.load_workbook('F:\\Github\\upc_availability_ebay\\sheets\\' + file)
-    wb2 = openpyxl.Workbook()
+# Q 3b
+# x = [2, 6, 5, 9]
+# result = 1
+#
+# for i in x:
+#     result *= i
+#
+# print('The result is: ' + str(result))
 
-    ws = wb.worksheets[0]
-    ws2 = wb2.create_sheet(title='Sheet1', index=0)
 
-    for i in range(1, 13):
-        if ws.cell(2, i).value == 'UPC':
-            j = 3
-            while ws.cell(j, i).value is not None:
-                upc_list.append(ws.cell(j, i).value)
-                j += 1
+# Q 3c
+# x = ['abc', 'xyz', 'aba', '1221']
+# count = 0
+#
+# for i in x:
+#     if len(i) >= 2 and i[0] == i[-1]:
+#         count += 1
+#
+# print('No of such string(s): ' + str(count))
 
-upc_set = set(upc_list)
 
-ws2.cell(1, 1).value = 'UPC'
-ws2.cell(1, 2).value = 'Count'
-j = 2
-for i in upc_set:
-    ws2.cell(j, 1).value = i
-    ws2.cell(j, 1).number_format = '0'
-    if upc_list.count(i) != 1:
-        ws2.cell(j, 2).value = 'x' + str(upc_list.count(i))
-        ws2.cell(j, 2).alignment = Alignment(horizontal='right')
-    j += 1
+# Q 3d
+# text = input('Enter a string: ')
+# a, e, i, o, u = 0, 0, 0, 0, 0
+#
+# for t in text:
+#     if t == 'a' or t == 'A':
+#         a += 1
+#     elif t == 'e' or t == 'E':
+#         e += 1
+#     elif t == 'i' or t == 'I':
+#         i += 1
+#     elif t == 'o' or t == 'O':
+#         o += 1
+#     elif t == 'u' or t == 'U':
+#         u += 1
+#
+# print('No of vowels:')
+# print('a/A: ' + str(a))
+# print('e/E: ' + str(e))
+# print('i/I: ' + str(i))
+# print('o/O: ' + str(o))
+# print('u/U: ' + str(u))
 
-ws2.column_dimensions['A'].width = 18.22
 
-wb2.save('output.xlsx')
+n = int(input('Enter no of employees: '))
+name = []
+basic = []
