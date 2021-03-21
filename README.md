@@ -6,7 +6,7 @@ An automation script that sorts unique UPCs from a given set of UPCs some of whi
 ***Steps:***
 1. Download the project as zip & extract it.
 2. Put your UPC sheets in the **sheets** folder.
-3. Run the **main**.**py** script either from command prompt or through IDEs likeVisual Studio, Pycharm etc.
+3. Run the **main**.**py** script either from command prompt or through IDEs like Visual Studio, Pycharm etc.
 
 ***Precautions:***
 1. Last but not the least, make sure you have a **stable internet connection**. Otherwise, the script may fail.
