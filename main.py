@@ -4,9 +4,9 @@ import os
 
 upc_list = []
 upc_set = ()
-
-for file in os.listdir('F:\\Github\\upc_availability_ebay\\sheets'):
-    wb = openpyxl.load_workbook('F:\\Github\\upc_availability_ebay\\sheets\\' + file)
+print(os.getcwd() + '\\sheets')
+for file in os.listdir(os.getcwd() + '\\sheets'):
+    wb = openpyxl.load_workbook(os.getcwd() + '\\sheets\\' + file)
     wb2 = openpyxl.Workbook()
 
     ws = wb.worksheets[0]
