@@ -1,6 +1,6 @@
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
-# UPC Count & Availability eBay
+# UPC Count & Availability on eBay
 An automation script that sorts unique UPCs from a given set of UPCs some of which are repetitive.
 
 ***Steps:***
