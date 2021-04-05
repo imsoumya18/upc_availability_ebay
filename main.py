@@ -12,7 +12,7 @@ for file in os.listdir(os.getcwd() + '\\sheets'):
     ws = wb.worksheets[0]
     ws2 = wb2.create_sheet(title='Sheet1', index=0)
 
-    for i in range(1, 13):
+    for i in range(1, 100):
         if ws.cell(2, i).value == 'UPC':
             j = 3
             while ws.cell(j, i).value is not None:
