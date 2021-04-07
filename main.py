@@ -41,7 +41,6 @@ for i in upc_set:
                         ws2.cell(j, 3).value += ws.cell(1, k).value[-1] + '   '
                     else:
                         ws2.cell(j, 3).value = ws.cell(1, k).value[-1] + '   '
-                # break
                 l += 1
     j += 1
 
