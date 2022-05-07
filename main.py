@@ -14,14 +14,20 @@ for file in os.listdir(os.getcwd() + '\\sheets'):
 
     i = 1
     while ws.cell(i, 1).value is not None:
+        if ws.cell(i, 3).value == 'SOLD':
+            ws.delete_rows(i, 1)
+        i += 1
+
+    i = 1
+    while ws.cell(i, 1).value is not None:
         upc_list.append(ws.cell(i, 1).value)
         i += 1
 
 upc_set = set(upc_list)
 
 redFill = PatternFill(start_color='FFFF0000',
-                   end_color='FFFF0000',
-                   fill_type='solid')
+                      end_color='FFFF0000',
+                      fill_type='solid')
 
 ws2.cell(1, 1).value = 'UPC'
 ws2.cell(1, 1).font = Font(size=20)
